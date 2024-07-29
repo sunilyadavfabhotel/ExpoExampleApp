@@ -46,6 +46,14 @@ const Home = () => {
       >
         AutoSuggest
       </Link>
+      <Link
+        style={styles.subtitle}
+        href={{
+          pathname: "/components/AlertModal",
+        }}
+      >
+        Alert Modal
+      </Link>
     </View>
   );
 };

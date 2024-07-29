@@ -18,6 +18,10 @@ export default function Layout() {
         name="components/AutoSuggestComponent"
         options={{ title: "AutoSuggest" }}
       />
+      <Stack.Screen
+        name="components/AlertModal"
+        options={{ title: "Alert Modal" }}
+      />
     </Stack>
   );
 }
