@@ -54,6 +54,15 @@ const Home = () => {
       >
         Alert Modal
       </Link>
+
+      <Link
+        style={styles.subtitle}
+        href={{
+          pathname: "/components/TableView",
+        }}
+      >
+        Table
+      </Link>
     </View>
   );
 };

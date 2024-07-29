@@ -22,6 +22,7 @@ export default function Layout() {
         name="components/AlertModal"
         options={{ title: "Alert Modal" }}
       />
+      <Stack.Screen name="components/TableView" options={{ title: "Table" }} />
     </Stack>
   );
 }
