@@ -22,6 +22,22 @@ const Home = () => {
       >
         List
       </Link>
+      <Link
+        style={styles.subtitle}
+        href={{
+          pathname: "/components/InputField",
+        }}
+      >
+        Input Field
+      </Link>
+      <Link
+        style={styles.subtitle}
+        href={{
+          pathname: "/components/Dropdown",
+        }}
+      >
+        Dropdown
+      </Link>
     </View>
   );
 };

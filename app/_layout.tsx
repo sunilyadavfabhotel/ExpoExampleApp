@@ -9,6 +9,11 @@ export default function Layout() {
         options={{ title: "Text Field" }}
       />
       <Stack.Screen name="components/List" options={{ title: "List" }} />
+      <Stack.Screen name="components/InputField" options={{ title: "Input" }} />
+      <Stack.Screen
+        name="components/Dropdown"
+        options={{ title: "Dropdown" }}
+      />
     </Stack>
   );
 }
