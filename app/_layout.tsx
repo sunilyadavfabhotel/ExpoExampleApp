@@ -14,6 +14,10 @@ export default function Layout() {
         name="components/Dropdown"
         options={{ title: "Dropdown" }}
       />
+      <Stack.Screen
+        name="components/AutoSuggestComponent"
+        options={{ title: "AutoSuggest" }}
+      />
     </Stack>
   );
 }

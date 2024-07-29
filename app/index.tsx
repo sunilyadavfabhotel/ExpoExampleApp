@@ -38,6 +38,14 @@ const Home = () => {
       >
         Dropdown
       </Link>
+      <Link
+        style={styles.subtitle}
+        href={{
+          pathname: "/components/AutoSuggestComponent",
+        }}
+      >
+        AutoSuggest
+      </Link>
     </View>
   );
 };
