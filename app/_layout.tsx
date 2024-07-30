@@ -23,6 +23,10 @@ export default function Layout() {
         options={{ title: "Alert Modal" }}
       />
       <Stack.Screen name="components/TableView" options={{ title: "Table" }} />
+      <Stack.Screen
+        name="components/Calendar"
+        options={{ title: "Calendar" }}
+      />
     </Stack>
   );
 }

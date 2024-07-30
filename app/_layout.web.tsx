@@ -30,6 +30,9 @@ export default function Layout() {
         <Link style={styles.link} href="/components/TableView">
           Table
         </Link>
+        <Link style={styles.link} href="/components/Calendar">
+          Calendar
+        </Link>
       </View>
       <View style={styles.content}>
         <Stack initialRouteName="Home" screenOptions={{ headerShown: false }}>
@@ -58,6 +61,10 @@ export default function Layout() {
           <Stack.Screen
             name="components/TableView"
             options={{ title: "Table" }}
+          />
+          <Stack.Screen
+            name="components/Calendar"
+            options={{ title: "Calendar" }}
           />
         </Stack>
       </View>

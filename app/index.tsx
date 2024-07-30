@@ -63,6 +63,14 @@ const Home = () => {
       >
         Table
       </Link>
+      <Link
+        style={styles.subtitle}
+        href={{
+          pathname: "/components/Calendar",
+        }}
+      >
+        Calendar
+      </Link>
     </View>
   );
 };
