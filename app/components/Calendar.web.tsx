@@ -13,22 +13,13 @@ const WebCalendar = () => {
   return (
     <View>
       <Pressable
-        // className="border-2 p-2 rounded-lg border-lime-900"
-        style={{
-          borderWidth: 2,
-          padding: 2,
-          borderRadius: 8,
-          borderColor: "lime",
-        }}
+        className="border-2 p-2 rounded-lg border-lime-900"
         onPress={() => setShowModal((prev) => !prev)}
       >
         <Text>{value?.toLocaleString()}</Text>
       </Pressable>
       {showModal && (
-        <View
-          //  className="w-96"
-          style={{ width: 300 }}
-        >
+        <View className="w-96">
           <Calendar
             onChange={(_date) => {
               setShowModal(false);

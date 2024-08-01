@@ -43,18 +43,9 @@ const AutoSuggestComponent = () => {
   };
 
   return (
-    <View
-      // className="p-4 w-full"
-      style={{ padding: 16, width: "100%" }}
-    >
+    <View className="p-4 w-full">
       <TextInput
-        // className="border border-gray-300 p-2 rounded-md"
-        style={{
-          borderWidth: 1,
-          borderColor: "#d1d5db",
-          padding: 8,
-          borderRadius: 8,
-        }}
+        className="border border-gray-300 p-2 rounded-md"
         placeholder="Type to search..."
         value={query}
         onChangeText={handleInputChange}
@@ -65,26 +56,13 @@ const AutoSuggestComponent = () => {
           keyExtractor={(item) => item}
           renderItem={({ item }) => (
             <TouchableOpacity
-              // className="p-2"
-              style={{ padding: 8 }}
+              className="p-2"
               onPress={() => handleSuggestionPress(item)}
             >
-              <Text
-                // className="text-lg"
-                style={{ fontSize: 16 }}
-              >
-                {item}
-              </Text>
+              <Text className="text-lg">{item}</Text>
             </TouchableOpacity>
           )}
-          // className="border border-gray-500 rounded-md mt-2 bg-white"
-          style={{
-            borderWidth: 1,
-            borderColor: "#d1d5db",
-            marginTop: 8,
-            borderRadius: 8,
-            backgroundColor: "#fff",
-          }}
+          className="border border-gray-500 rounded-md mt-2 bg-white"
         />
       )}
     </View>

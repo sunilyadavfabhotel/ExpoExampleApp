@@ -1,6 +1,8 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View } from "react-native";
 import { Stack, Link, usePathname } from "expo-router";
+
+import "../global.css";
 
 const screens = [
   { name: "Home", path: "/", options: { title: "Home" } },
@@ -37,26 +39,29 @@ const screens = [
     options: { title: "Calendar" },
   },
 ];
+
+const baseStyle = "my-1 text-lg text-[#41348d] no-underline px-1 py-1";
+const activeStyle = "text-[#f0f0f0] bg-[#41348d] px-1 py-1 rounded";
+
 export default function Layout() {
   const pathname = usePathname();
 
   return (
-    <View style={styles.container}>
-      <View style={styles.sidebar}>
+    <View className="flex flex-row h-screen">
+      <View className="w-52 bg-gray-200 p-5">
         {screens.map((data) => (
           <Link
             key={data.path}
-            style={[
-              styles.link,
-              pathname === data.path ? styles.activeLink : {},
-            ]}
+            className={`${baseStyle} ${
+              pathname === data.path ? activeStyle : ""
+            }`}
             href={data.path}
           >
             {data.name}
           </Link>
         ))}
       </View>
-      <View style={styles.content}>
+      <View className="w-4/5 bg-gray-100 p-5">
         <Stack initialRouteName="Home" screenOptions={{ headerShown: false }}>
           {screens.map((screen, index) => (
             <Stack.Screen
@@ -70,35 +75,3 @@ export default function Layout() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    height: "100%",
-  },
-  sidebar: {
-    width: "20%",
-    backgroundColor: "#bebbbb",
-    padding: 10,
-  },
-  content: {
-    width: "80%",
-    padding: 20,
-    backgroundColor: "#f0f0f0",
-  },
-  link: {
-    marginVertical: 5,
-    fontSize: 18,
-    color: "#41348d",
-    textDecorationLine: "none",
-    paddingHorizontal: 5,
-    paddingVertical: 5,
-  },
-  activeLink: {
-    color: "#f0f0f0",
-    backgroundColor: "#41348d",
-    paddingHorizontal: 5,
-    paddingVertical: 5,
-    borderRadius: 5,
-  },
-});
