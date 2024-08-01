@@ -1,6 +1,6 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { View, StyleSheet } from "react-native";
-import { Stack, Link, useFocusEffect, usePathname } from "expo-router";
+import { Stack, Link, usePathname } from "expo-router";
 
 const sideLayoutData = [
   { name: "Home", path: "/" },
@@ -54,15 +54,7 @@ const screens = [
 
 export default function Layout() {
   const pathname = usePathname();
-  useFocusEffect(
-    useCallback(() => {
-      console.log("Hello, I am focused!", pathname);
 
-      return () => {
-        console.log("This route is now unfocused.");
-      };
-    }, [])
-  );
   return (
     <View style={styles.container}>
       <View style={styles.sidebar}>
