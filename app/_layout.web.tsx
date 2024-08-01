@@ -13,6 +13,45 @@ const sideLayoutData = [
   { name: "Table", path: "/components/TableView" },
   { name: "Calendar", path: "/components/Calendar" },
 ];
+const screens = [
+  {
+    name: "index",
+    options: { title: "Home" },
+  },
+  {
+    name: "components/TextShow",
+    options: { title: "Text Field" },
+  },
+  {
+    name: "components/List",
+    options: { title: "List" },
+  },
+  {
+    name: "components/InputField",
+    options: { title: "Input" },
+  },
+  {
+    name: "components/Dropdown",
+    options: { title: "Dropdown" },
+  },
+  {
+    name: "components/AutoSuggestComponent",
+    options: { title: "AutoSuggest" },
+  },
+  {
+    name: "components/AlertModal",
+    options: { title: "Alert Modal" },
+  },
+  {
+    name: "components/TableView",
+    options: { title: "Table" },
+  },
+  {
+    name: "components/Calendar",
+    options: { title: "Calendar" },
+  },
+];
+
 export default function Layout() {
   const pathname = usePathname();
   useFocusEffect(
@@ -42,36 +81,13 @@ export default function Layout() {
       </View>
       <View style={styles.content}>
         <Stack initialRouteName="Home" screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="index" options={{ title: "Home" }} />
-          <Stack.Screen
-            name="components/TextShow"
-            options={{ title: "Text Field" }}
-          />
-          <Stack.Screen name="components/List" options={{ title: "List" }} />
-          <Stack.Screen
-            name="components/InputField"
-            options={{ title: "Input" }}
-          />
-          <Stack.Screen
-            name="components/Dropdown"
-            options={{ title: "Dropdown" }}
-          />
-          <Stack.Screen
-            name="components/AutoSuggestComponent"
-            options={{ title: "AutoSuggest" }}
-          />
-          <Stack.Screen
-            name="components/AlertModal"
-            options={{ title: "Alert Modal" }}
-          />
-          <Stack.Screen
-            name="components/TableView"
-            options={{ title: "Table" }}
-          />
-          <Stack.Screen
-            name="components/Calendar"
-            options={{ title: "Calendar" }}
-          />
+          {screens.map((screen, index) => (
+            <Stack.Screen
+              key={index}
+              name={screen.name}
+              options={screen.options}
+            />
+          ))}
         </Stack>
       </View>
     </View>
