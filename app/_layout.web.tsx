@@ -2,63 +2,48 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import { Stack, Link, usePathname } from "expo-router";
 
-const sideLayoutData = [
-  { name: "Home", path: "/" },
-  { name: "Text Field", path: "/components/TextShow" },
-  { name: "List", path: "/components/List" },
-  { name: "Input Field", path: "/components/InputField" },
-  { name: "Dropdown", path: "/components/Dropdown" },
-  { name: "AutoSuggest", path: "/components/AutoSuggestComponent" },
-  { name: "Alert Modal", path: "/components/AlertModal" },
-  { name: "Table", path: "/components/TableView" },
-  { name: "Calendar", path: "/components/Calendar" },
-];
 const screens = [
+  { name: "Home", path: "/", options: { title: "Home" } },
   {
-    name: "index",
-    options: { title: "Home" },
-  },
-  {
-    name: "components/TextShow",
+    name: "Text Field",
+    path: "/components/TextShow",
     options: { title: "Text Field" },
   },
+  { name: "List", path: "/components/List", options: { title: "List" } },
   {
-    name: "components/List",
-    options: { title: "List" },
-  },
-  {
-    name: "components/InputField",
+    name: "Input Field",
+    path: "/components/InputField",
     options: { title: "Input" },
   },
   {
-    name: "components/Dropdown",
+    name: "Dropdown",
+    path: "/components/Dropdown",
     options: { title: "Dropdown" },
   },
   {
-    name: "components/AutoSuggestComponent",
+    name: "AutoSuggest",
+    path: "/components/AutoSuggestComponent",
     options: { title: "AutoSuggest" },
   },
   {
-    name: "components/AlertModal",
+    name: "Alert Modal",
+    path: "/components/AlertModal",
     options: { title: "Alert Modal" },
   },
+  { name: "Table", path: "/components/TableView", options: { title: "Table" } },
   {
-    name: "components/TableView",
-    options: { title: "Table" },
-  },
-  {
-    name: "components/Calendar",
+    name: "Calendar",
+    path: "/components/Calendar",
     options: { title: "Calendar" },
   },
 ];
-
 export default function Layout() {
   const pathname = usePathname();
 
   return (
     <View style={styles.container}>
       <View style={styles.sidebar}>
-        {sideLayoutData.map((data) => (
+        {screens.map((data) => (
           <Link
             key={data.path}
             style={[
