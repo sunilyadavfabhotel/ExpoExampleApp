@@ -1,38 +1,44 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { View, StyleSheet } from "react-native";
-import { Stack, Link } from "expo-router";
+import { Stack, Link, useFocusEffect, usePathname } from "expo-router";
 
+const sideLayoutData = [
+  { name: "Home", path: "/" },
+  { name: "Text Field", path: "/components/TextShow" },
+  { name: "List", path: "/components/List" },
+  { name: "Input Field", path: "/components/InputField" },
+  { name: "Dropdown", path: "/components/Dropdown" },
+  { name: "AutoSuggest", path: "/components/AutoSuggestComponent" },
+  { name: "Alert Modal", path: "/components/AlertModal" },
+  { name: "Table", path: "/components/TableView" },
+  { name: "Calendar", path: "/components/Calendar" },
+];
 export default function Layout() {
+  const pathname = usePathname();
+  useFocusEffect(
+    useCallback(() => {
+      console.log("Hello, I am focused!", pathname);
+
+      return () => {
+        console.log("This route is now unfocused.");
+      };
+    }, [])
+  );
   return (
     <View style={styles.container}>
       <View style={styles.sidebar}>
-        <Link style={styles.link} href="/">
-          Home
-        </Link>
-        <Link style={styles.link} href="/components/TextShow">
-          Text Field
-        </Link>
-        <Link style={styles.link} href="/components/List">
-          List
-        </Link>
-        <Link style={styles.link} href="/components/InputField">
-          Input Field
-        </Link>
-        <Link style={styles.link} href="/components/Dropdown">
-          Dropdown
-        </Link>
-        <Link style={styles.link} href="/components/AutoSuggestComponent">
-          AutoSuggest
-        </Link>
-        <Link style={styles.link} href="/components/AlertModal">
-          Alert Modal
-        </Link>
-        <Link style={styles.link} href="/components/TableView">
-          Table
-        </Link>
-        <Link style={styles.link} href="/components/Calendar">
-          Calendar
-        </Link>
+        {sideLayoutData.map((data) => (
+          <Link
+            key={data.path}
+            style={[
+              styles.link,
+              pathname === data.path ? styles.activeLink : {},
+            ]}
+            href={data.path}
+          >
+            {data.name}
+          </Link>
+        ))}
       </View>
       <View style={styles.content}>
         <Stack initialRouteName="Home" screenOptions={{ headerShown: false }}>
@@ -79,17 +85,27 @@ const styles = StyleSheet.create({
   },
   sidebar: {
     width: "20%",
-    backgroundColor: "#f0f0f0",
-    padding: 20,
+    backgroundColor: "#bebbbb",
+    padding: 10,
   },
   content: {
     width: "80%",
-    borderWidth: 1,
+    padding: 20,
+    backgroundColor: "#f0f0f0",
   },
   link: {
-    marginVertical: 10,
+    marginVertical: 5,
     fontSize: 18,
-    color: "blue",
+    color: "#41348d",
     textDecorationLine: "none",
+    paddingHorizontal: 5,
+    paddingVertical: 5,
+  },
+  activeLink: {
+    color: "#f0f0f0",
+    backgroundColor: "#41348d",
+    paddingHorizontal: 5,
+    paddingVertical: 5,
+    borderRadius: 5,
   },
 });
