@@ -1,90 +1,59 @@
-import { Link, Stack } from "expo-router";
+import { Link } from "expo-router";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
+
+const linkArray = [
+  {
+    label: "Text Field",
+    pathname: "/components/TextShow",
+  },
+  {
+    label: "List",
+    pathname: "/components/List",
+  },
+  {
+    label: "Input Field",
+    pathname: "/components/InputField",
+  },
+  {
+    label: "Dropdown",
+    pathname: "/components/Dropdown",
+  },
+  {
+    label: "AutoSuggest",
+    pathname: "/components/AutoSuggestComponent",
+  },
+  {
+    label: "Alert Modal",
+    pathname: "/components/AlertModal",
+  },
+  {
+    label: "Table",
+    pathname: "/components/TableView",
+  },
+  {
+    label: "Calendar",
+    pathname: "/components/Calendar",
+  },
+];
 
 const Home = () => {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <View className="flex justify-center items-center">
       <Text>Components Lists</Text>
-      <Link
-        style={styles.subtitle}
-        href={{
-          pathname: "/components/TextShow",
-        }}
-      >
-        Text Field
-      </Link>
-      <Link
-        style={styles.subtitle}
-        href={{
-          pathname: "/components/List",
-        }}
-      >
-        List
-      </Link>
-      <Link
-        style={styles.subtitle}
-        href={{
-          pathname: "/components/InputField",
-        }}
-      >
-        Input Field
-      </Link>
-      <Link
-        style={styles.subtitle}
-        href={{
-          pathname: "/components/Dropdown",
-        }}
-      >
-        Dropdown
-      </Link>
-      <Link
-        style={styles.subtitle}
-        href={{
-          pathname: "/components/AutoSuggestComponent",
-        }}
-      >
-        AutoSuggest
-      </Link>
-      <Link
-        style={styles.subtitle}
-        href={{
-          pathname: "/components/AlertModal",
-        }}
-      >
-        Alert Modal
-      </Link>
-
-      <Link
-        style={styles.subtitle}
-        href={{
-          pathname: "/components/TableView",
-        }}
-      >
-        Table
-      </Link>
-      <Link
-        style={styles.subtitle}
-        href={{
-          pathname: "/components/Calendar",
-        }}
-      >
-        Calendar
-      </Link>
+      {linkArray.map((link) => (
+        <Link
+          key={link.pathname}
+          className="text-blue-500 text-base py-2 px-4 my-2 border border-gray-200 rounded-lg"
+          href={{
+            pathname: link.pathname,
+          }}
+        >
+          {link.label}
+        </Link>
+      ))}
     </View>
   );
 };
 
 export default Home;
-
-const styles = StyleSheet.create({
-  subtitle: {
-    color: "blue",
-    fontSize: 16,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    marginVertical: 10,
-    borderWidth: 1,
-    borderRadius: 10,
-  },
-});

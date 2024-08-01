@@ -5,28 +5,14 @@ const InputComponent = () => {
   const [text, setText] = useState("");
 
   return (
-    <View
-      // className="p-4"
-      style={{ padding: 16 }}
-    >
+    <View className="p-4">
       <TextInput
-        // className="border border-gray-300 p-2 rounded-md"
-        style={{
-          borderWidth: 1,
-          borderColor: "#d1d5db",
-          padding: 8,
-          borderRadius: 8,
-        }}
+        className="border border-gray-300 p-2 rounded-md"
         placeholder="Type here"
         value={text}
         onChangeText={setText}
       />
-      <Text
-        // className="mt-2 text-lg"
-        style={{ marginTop: 8, fontSize: 16 }}
-      >
-        You entered: {text}
-      </Text>
+      <Text className="mt-2 text-lg">You entered: {text}</Text>
     </View>
   );
 };

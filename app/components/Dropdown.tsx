@@ -17,54 +17,26 @@ const DropdownComponent = () => {
   };
 
   return (
-    <View
-      // className="p-4 w-full"
-      style={{ padding: 16, width: "100%" }}
-    >
+    <View className="p-4 w-full">
       <TouchableOpacity
-        // className="border border-gray-300 p-2 rounded-md bg-white"
-        style={{
-          borderWidth: 1,
-          borderColor: "#d1d5db",
-          padding: 8,
-          borderRadius: 8,
-          backgroundColor: "#fff",
-        }}
+        className="border border-gray-300 p-2 rounded-md bg-white"
         onPress={toggleDropdown}
       >
-        <Text
-          //  className="text-lg"
-          style={{ fontSize: 16 }}
-        >
+        <Text className="text-lg">
           {selectedItem ? selectedItem : "Select an option"}
         </Text>
       </TouchableOpacity>
       {isDropdownOpen && (
-        <View
-          //  className="border border-gray-300 mt-2 rounded-md bg-white"
-          style={{
-            borderWidth: 1,
-            borderColor: "#d1d5db",
-            marginTop: 8,
-            borderRadius: 8,
-            backgroundColor: "#fff",
-          }}
-        >
+        <View className="border border-gray-300 mt-2 rounded-md bg-white">
           <FlatList
             data={items}
             keyExtractor={(item) => item}
             renderItem={({ item }) => (
               <TouchableOpacity
-                // className="p-2"
-                style={{ padding: 8 }}
+                className="p-2"
                 onPress={() => handleItemPress(item)}
               >
-                <Text
-                  //  className="text-lg"
-                  style={{ fontSize: 16 }}
-                >
-                  {item}
-                </Text>
+                <Text className="text-lg">{item}</Text>
               </TouchableOpacity>
             )}
           />

@@ -43,158 +43,36 @@ const data = [
 
 const TableView = () => {
   return (
-    <ScrollView
-      //  className="p-4 flex-1"
-      style={{ padding: 16, flex: 1 }}
-    >
-      <ScrollView
-        horizontal
-        // className="flex-1"
-        style={{ flex: 1 }}
-      >
-        <View
-          // className="min-w-full"
-          style={{ minWidth: "100%" }}
-        >
-          <View
-            // className="flex flex-row border-b-2 border-gray-300"
-            style={{
-              flexDirection: "row",
-              borderBottomWidth: 2,
-              borderColor: "#d1d5db",
-            }}
-          >
-            <Text
-              // className="p-2 font-bold flex-1 min-w-[100px]"
-              style={{ padding: 8, fontWeight: "bold", flex: 1, minWidth: 100 }}
-            >
-              ID
-            </Text>
-            <Text
-              // className="p-2 font-bold flex-1 min-w-[150px]"
-              style={{ padding: 8, fontWeight: "bold", flex: 1, minWidth: 150 }}
-            >
-              Name
-            </Text>
-            <Text
-              // className="p-2 font-bold flex-1 min-w-[80px]"
-              style={{ padding: 8, fontWeight: "bold", flex: 1, minWidth: 80 }}
-            >
-              Age
-            </Text>
-            <Text
-              // className="p-2 font-bold flex-1 min-w-[150px]"
-              style={{ padding: 8, fontWeight: "bold", flex: 1, minWidth: 150 }}
-            >
-              City
-            </Text>
-            <Text
-              // className="p-2 font-bold flex-1 min-w-[150px]"
-              style={{ padding: 8, fontWeight: "bold", flex: 1, minWidth: 150 }}
-            >
-              Job
-            </Text>
-            <Text
-              // className="p-2 font-bold flex-1 min-w-[200px]"
-              style={{ padding: 8, fontWeight: "bold", flex: 1, minWidth: 200 }}
-            >
-              Company
-            </Text>
-            <Text
-              // className="p-2 font-bold flex-1 min-w-[250px]"
-              style={{ padding: 8, fontWeight: "bold", flex: 1, minWidth: 250 }}
-            >
-              Email
-            </Text>
-            <Text
-              // className="p-2 font-bold flex-1 min-w-[150px]"
-              style={{ padding: 8, fontWeight: "bold", flex: 1, minWidth: 150 }}
-            >
-              Phone
-            </Text>
-            <Text
-              // className="p-2 font-bold flex-1 min-w-[200px]"
-              style={{ padding: 8, fontWeight: "bold", flex: 1, minWidth: 200 }}
-            >
-              Address
-            </Text>
-            <Text
-              // className="p-2 font-bold flex-1 min-w-[150px]"
-              style={{ padding: 8, fontWeight: "bold", flex: 1, minWidth: 150 }}
-            >
-              Country
-            </Text>
+    <ScrollView className="p-4 flex-1">
+      <ScrollView horizontal className="flex-1">
+        <View className="min-w-full">
+          <View className="flex flex-row border-b-2 border-gray-300">
+            <Text className="p-2 font-bold flex-1 min-w-[100px]">ID</Text>
+            <Text className="p-2 font-bold flex-1 min-w-[150px]">Name</Text>
+            <Text className="p-2 font-bold flex-1 min-w-[80px]">Age</Text>
+            <Text className="p-2 font-bold flex-1 min-w-[150px]">City</Text>
+            <Text className="p-2 font-bold flex-1 min-w-[150px]">Job</Text>
+            <Text className="p-2 font-bold flex-1 min-w-[200px]">Company</Text>
+            <Text className="p-2 font-bold flex-1 min-w-[250px]">Email</Text>
+            <Text className="p-2 font-bold flex-1 min-w-[150px]">Phone</Text>
+            <Text className="p-2 font-bold flex-1 min-w-[200px]">Address</Text>
+            <Text className="p-2 font-bold flex-1 min-w-[150px]">Country</Text>
           </View>
           {data.map((item) => (
             <View
               key={item.id}
-              // className="flex flex-row border-b border-gray-200"
-              style={{
-                flexDirection: "row",
-                borderBottomWidth: 1,
-                borderColor: "#e5e7eb",
-              }}
+              className="flex flex-row border-b border-gray-200"
             >
-              <Text
-                // className="p-2 flex-1 min-w-[100px]"
-                style={{ padding: 8, flex: 1, minWidth: 100 }}
-              >
-                {item.id}
-              </Text>
-              <Text
-                // className="p-2 flex-1 min-w-[150px]"
-                style={{ padding: 8, flex: 1, minWidth: 150 }}
-              >
-                {item.name}
-              </Text>
-              <Text
-                // className="p-2 flex-1 min-w-[80px]"
-                style={{ padding: 8, flex: 1, minWidth: 80 }}
-              >
-                {item.age}
-              </Text>
-              <Text
-                // className="p-2 flex-1 min-w-[150px]"
-                style={{ padding: 8, flex: 1, minWidth: 150 }}
-              >
-                {item.city}
-              </Text>
-              <Text
-                // className="p-2 flex-1 min-w-[150px]"
-                style={{ padding: 8, flex: 1, minWidth: 150 }}
-              >
-                {item.job}
-              </Text>
-              <Text
-                // className="p-2 flex-1 min-w-[200px]"
-                style={{ padding: 8, flex: 1, minWidth: 200 }}
-              >
-                {item.company}
-              </Text>
-              <Text
-                // className="p-2 flex-1 min-w-[250px]"
-                style={{ padding: 8, flex: 1, minWidth: 250 }}
-              >
-                {item.email}
-              </Text>
-              <Text
-                // className="p-2 flex-1 min-w-[150px]"
-                style={{ padding: 8, flex: 1, minWidth: 150 }}
-              >
-                {item.phone}
-              </Text>
-              <Text
-                // className="p-2 flex-1 min-w-[200px]"
-                style={{ padding: 8, flex: 1, minWidth: 200 }}
-              >
-                {item.address}
-              </Text>
-              <Text
-                // className="p-2 flex-1 min-w-[150px]"
-                style={{ padding: 8, flex: 1, minWidth: 150 }}
-              >
-                {item.country}
-              </Text>
+              <Text className="p-2 flex-1 min-w-[100px]">{item.id}</Text>
+              <Text className="p-2 flex-1 min-w-[150px]">{item.name}</Text>
+              <Text className="p-2 flex-1 min-w-[80px]">{item.age}</Text>
+              <Text className="p-2 flex-1 min-w-[150px]">{item.city}</Text>
+              <Text className="p-2 flex-1 min-w-[150px]">{item.job}</Text>
+              <Text className="p-2 flex-1 min-w-[200px]">{item.company}</Text>
+              <Text className="p-2 flex-1 min-w-[250px]">{item.email}</Text>
+              <Text className="p-2 flex-1 min-w-[150px]">{item.phone}</Text>
+              <Text className="p-2 flex-1 min-w-[200px]">{item.address}</Text>
+              <Text className="p-2 flex-1 min-w-[150px]">{item.country}</Text>
             </View>
           ))}
         </View>

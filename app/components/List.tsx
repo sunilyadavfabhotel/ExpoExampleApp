@@ -33,29 +33,16 @@ const ListComponent = () => {
       {items.map((item) => (
         <View
           key={item.id}
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-            padding: 8,
-            margin: 8,
-            backgroundColor: "#eeeeee",
-            borderRadius: 8,
-          }}
+          className="flex flex-row justify-between items-center p-2 m-2 bg-gray-200 rounded-lg"
         >
-          <Text style={{ fontSize: 16 }}>{item.text}</Text>
+          <Text className="text-lg">{item.text}</Text>
           <Pressable
             onPress={() => {
-              console.log("item.id", item.id);
               changeItemContent(item.id);
             }}
-            style={{
-              backgroundColor: "#3498db",
-              padding: 8,
-              borderRadius: 8,
-            }}
+            className="bg-blue-500 p-2 rounded-md"
           >
-            <Text style={{ color: "#ffffff" }}>{item.btnText}</Text>
+            <Text className="text-white">{item.btnText}</Text>
           </Pressable>
         </View>
       ))}
